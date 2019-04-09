@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extras.DynamicProxy2;
 using Autofac.Integration.WebApi;
+using CeeKee.PublicLib.Autofac;
 using IService;
 using Service;
 using System;
@@ -12,8 +13,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Utils;
-using Utils.AOP;
+//using Utils;
+//using Utils.AOP;
 
 namespace AutofacTest
 {
@@ -72,7 +73,7 @@ namespace AutofacTest
             //builder.RegisterType<AHotelService>().Named<IHotelService>("ahotelservice");
 
             //通过serviceKey（可以是枚举等）区分一个接口多个实现
-            builder.RegisterType<HotelService>().Keyed<IHotelService>(HotelServiceType.HotelService);
+            builder.RegisterType<HotelService>().Keyed<IHotelService>(HotelServiceType.HotelService).EnableInterfaceInterceptors();
             builder.RegisterType<AHotelService>().Keyed<IHotelService>(HotelServiceType.AHotelService);
 
             //注册拦截器

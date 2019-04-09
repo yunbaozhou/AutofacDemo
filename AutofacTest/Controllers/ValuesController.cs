@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
+using CeeKee.PublicLib.Autofac;
 using IService;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Utils;
 
 namespace AutofacTest.Controllers
 {
@@ -24,7 +24,7 @@ namespace AutofacTest.Controllers
         public ValuesController()
         {
             //hotelService = AutofacManagerUtils.GetInstance<IHotelService>("hotelservice");
-            hotelService = AutofacManagerUtils.GetInstance<IHotelService>(HotelServiceType.AHotelService);
+            hotelService = AutofacManagerUtils.GetInstance<IHotelService>(HotelServiceType.HotelService);
             //hotelService = GlobalConfiguration.Configuration.DependencyResolver.GetRootLifetimeScope().ResolveNamed<IHotelService>("ahotelservice");
         }
 
