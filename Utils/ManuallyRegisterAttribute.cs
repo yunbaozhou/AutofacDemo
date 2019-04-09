@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public class Class1
+    [AttributeUsage(AttributeTargets.Class)]
+    public class ManuallyRegisterAttribute : Attribute
     {
     }
 }

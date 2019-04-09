@@ -294,6 +294,10 @@
       <Project>{C03AEE33-0210-4CCD-806B-FD3F81C4BFAF}</Project>
       <Name>IService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{E4987AB8-9E19-486E-B90E-496130288FC5}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{2A773D7B-EAE0-4A6B-AE70-9F98DD0A7673}</Project>
       <Name>Utils</Name>

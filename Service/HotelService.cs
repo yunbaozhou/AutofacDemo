@@ -6,19 +6,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utils;
 using Utils.AOP;
 
 namespace Service
 {
+    [ManuallyRegister]
     [Intercept(typeof(GlobalInterceptor))]
     public class HotelService : IHotelService
     {
         public IHotelRepository HotelRepository { get; set; }
 
-        //public HotelService(IHotelRepository repository)
-        //{
-        //    hotelRepository = repository;
-        //}
+        public HotelService(IHotelRepository repository)
+        {
+            HotelRepository = repository;
+        }
 
         public string GetHotelName(long hotelId)
         {
